@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    /* เปลี่ยนเป็นโทนสีเนบิวลา/กาแล็กซี่ (น้ำเงิน มม่วง ชมพู ดำ) */
+    background: linear-gradient(-45deg, #0b001a, #1f1147, #4b134f, #1a0033);
+    background-size: 400% 400%;
+    animation: bgMove 12s ease infinite; /* ปรับให้เคลื่อนไหวช้าลงดูนุ่มนวลแบบอวกาศ */
+    color: #e0e0e0; /* เปลี่ยนสีตัวอักษรหลักเป็นสีสว่างเพื่อให้ตัดกับพื้นหลังมืด */
+}
+
+/* พื้นหลังเคลื่อนไหว */
+@keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+header {
+    /* ไล่เฉดสีจากม่วงเข้มไปน้ำเงินประกาย */
+    background: linear-gradient(90deg, #1f1147, #3a1c5d, #0f051d);
+    color: #00ffff; /* ตัวอักษรสีฟ้านีออนแบบไซเบอร์/อวกาศ */
+    padding: 20px 0;
+    text-align: center;
+    animation: fadeDown 1s ease;
+    border-bottom: 2px solid #8a2be2; /* เพิ่มเส้นขอบเรืองแสง */
+}
+
+header h1 {
+    margin: 0;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #8a2be2; /* เพิ่มเอฟเฟกต์เรืองแสง */
+}
+
+header p {
+    margin: 5px 0 0;
+    color: #ff00ff; /* สีชมพูนีออน */
+}
+
+section {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    /* ปรับพื้นหลังกล่องให้เป็นสีมืดโปร่งแสง (Glassmorphism) */
+    background: rgba(15, 10, 25, 0.85); 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    /* เงาเรืองแสงสีม่วง/น้ำเงิน */
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.3);
+    animation: fadeUp 1s ease;
+    transition: all 0.3s ease;
+}
+
+section:hover {
+    transform: scale(1.03);
+    /* เรืองแสงชัดขึ้นเมื่อชี้ */
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+}
+
+h2 {
+    color: #00ffff; /* หัวข้อสีฟ้านีออน */
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+}
+
+.project {
+    margin-bottom: 20px;
+}
+
+.project h3 {
+    margin: 0 0 10px;
+    color: #ff00ff; /* หัวข้อย่อยสีชมพูมาเจนต้า */
+}
+
+ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    /* ไล่เฉดสีเข้ากับ Header */
+    background: linear-gradient(90deg, #0f051d, #3a1c5d, #1f1147);
+    color: #8a2be2;
+    margin-top: 20px;
+    border-top: 2px solid #8a2be2;
+}
+
+/* Animation */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
